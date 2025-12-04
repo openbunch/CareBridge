@@ -89,52 +89,6 @@ POST /api/v1/facilities
 X-API-Key: your-api-key-here
 ```
 
-## Key Features
-
-### Healthcare System Interoperability
-- Bridge siloed healthcare systems (EMR, labs, pharmacy, radiology)
-- Enable seamless data exchange between disparate systems
-- Facilitate drug dosage orders, lab result sharing, and clinical workflows
-- Support standardized communication protocols
-
-### Health Facility Management
-- Register new health facilities in the CareBridge network
-- Generate API keys for facility authentication
-- Support for various facility types (hospitals, clinics, health centers, labs, pharmacies)
-
-### Patient Management
-- Create or resolve patients by external facility IDs
-- Unified patient identification across multiple systems
-- Track patients across multiple facilities
-- Store patient demographics and contact information
-- Prevent duplicate patient records within a facility
-
-### Referral System
-- Coordinate patient referrals between facilities
-- Track referral status and priority
-- Support different referral types
-- Enable coordinated care across the healthcare network
-
-## Project Structure
-
-```
-src/main/java/com/okumujustine/CareBridge/
-├── CareBridgeApplication.java       # Application entry point
-├── config/                           # Configuration classes
-│   └── OpenApiConfig.java           # API documentation configuration
-├── healthfacility/                   # Health facility management
-│   ├── HealthFacilityController.java
-│   ├── HealthFacilityService.java
-│   └── dtos/
-├── patient/                          # Patient management
-│   ├── PatientController.java
-│   ├── PatientService.java
-│   └── dtos/
-├── referral/                         # Referral system
-│   └── enums/
-└── common/                          # Shared utilities and enums
-```
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit issues and pull requests.
