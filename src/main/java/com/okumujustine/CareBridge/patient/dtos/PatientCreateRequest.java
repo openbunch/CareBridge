@@ -1,0 +1,35 @@
+package com.okumujustine.CareBridge.patient.dtos;
+import com.okumujustine.CareBridge.common.enums.Gender;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data
+@Getter
+@Setter
+public class PatientCreateRequest {
+
+    /**
+     * Patient ID in the calling facility's system.
+     * This is how we link back to them.
+     */
+    @NotBlank
+    private String externalPatientId;
+
+    @NotBlank
+    private String fullName;
+
+    @NotNull
+    private Gender gender;
+
+    /**
+     * ISO-8601 date string, e.g. "1990-04-02".
+     * We'll parse this into LocalDate.
+     */
+    @NotBlank
+    private String dateOfBirth;
+
+    private String phone;
+}
