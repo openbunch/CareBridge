@@ -1,13 +1,15 @@
 # CareBridge
 
-CareBridge is a medical infrastructure platform designed to facilitate healthcare management across multiple health facilities. It enables patient registration, tracking, and referrals between different healthcare providers.
+CareBridge is an interoperability platform that bridges siloed healthcare systems such as Electronic Medical Records (EMR), laboratory information systems, pharmacy systems, and other healthcare applications. It enables seamless communication and data exchange between these disparate systems for critical workflows including patient referrals, drug dosage orders, lab results sharing, and coordinated care across multiple health facilities.
 
 ## Overview
 
-CareBridge provides a RESTful API for managing:
-- **Health Facilities**: Register and manage hospitals, clinics, and other healthcare providers
-- **Patients**: Create and track patient records across facilities
-- **Referrals**: Coordinate patient referrals between healthcare facilities
+CareBridge provides a RESTful API that acts as an integration layer for healthcare systems:
+- **Health Facilities**: Register and manage hospitals, clinics, labs, and pharmacies in the network
+- **Patients**: Unified patient identification and tracking across multiple systems
+- **Referrals**: Coordinate patient referrals between facilities and departments
+- **Interoperability**: Enable communication between EMR systems, labs, pharmacy systems, and other healthcare applications
+- **Data Exchange**: Facilitate sharing of drug dosage orders, lab results, and clinical information
 
 ## Technology Stack
 
@@ -34,12 +36,14 @@ Before running CareBridge, ensure you have the following installed:
 createdb carbridge
 ```
 
-2. Update the database configuration in `src/main/resources/application.properties`:
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/carbridge
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+2. Configure database credentials using environment variables:
+```bash
+export DB_URL=jdbc:postgresql://localhost:5432/carbridge
+export DB_USERNAME=your_username
+export DB_PASSWORD=your_password
 ```
+
+3. The application will automatically use these environment variables. See `src/main/resources/application.properties` for the configuration structure.
 
 ## Installation & Running
 
@@ -54,8 +58,11 @@ cd CareBridge
 ./mvnw clean install
 ```
 
-3. Run the application:
+3. Run the application with environment variables:
 ```bash
+DB_URL=jdbc:postgresql://localhost:5432/carbridge \
+DB_USERNAME=your_username \
+DB_PASSWORD=your_password \
 ./mvnw spring-boot:run
 ```
 
@@ -84,13 +91,20 @@ X-API-Key: your-api-key-here
 
 ## Key Features
 
+### Healthcare System Interoperability
+- Bridge siloed healthcare systems (EMR, labs, pharmacy, radiology)
+- Enable seamless data exchange between disparate systems
+- Facilitate drug dosage orders, lab result sharing, and clinical workflows
+- Support standardized communication protocols
+
 ### Health Facility Management
 - Register new health facilities in the CareBridge network
 - Generate API keys for facility authentication
-- Support for various facility types (hospitals, clinics, health centers)
+- Support for various facility types (hospitals, clinics, health centers, labs, pharmacies)
 
 ### Patient Management
 - Create or resolve patients by external facility IDs
+- Unified patient identification across multiple systems
 - Track patients across multiple facilities
 - Store patient demographics and contact information
 - Prevent duplicate patient records within a facility
@@ -99,6 +113,7 @@ X-API-Key: your-api-key-here
 - Coordinate patient referrals between facilities
 - Track referral status and priority
 - Support different referral types
+- Enable coordinated care across the healthcare network
 
 ## Project Structure
 
