@@ -29,7 +29,7 @@ Before running CareBridge, ensure you have the following installed:
 
 ## Database Setup
 
-1. Create a PostgreSQL database:
+1. Create a PostgreSQL database (the default database name is `carbridge`):
 ```bash
 createdb carbridge
 ```
