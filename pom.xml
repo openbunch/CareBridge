@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.justineokumu</groupId>
-	<artifactId>CareBridge</artifactId>
+	<artifactId>referral-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CareBridge</name>
-	<description>Medical infrastrusture</description>
+	<name>Referral Service</name>
+	<description>Healthcare referral management microservice</description>
 	<url/>
 	<licenses>
 		<license/>

@@ -1,15 +1,16 @@
-# CareBridge
+# Referral Service
 
-CareBridge is an interoperability platform that bridges siloed healthcare systems such as Electronic Medical Records (EMR), laboratory information systems, pharmacy systems, and other healthcare applications. It enables seamless communication and data exchange between these disparate systems for critical workflows including patient referrals, drug dosage orders, lab results sharing, and coordinated care across multiple health facilities.
+Referral Service is a microservice focused on managing patient referrals in the healthcare interoperability platform. It coordinates patient referrals between facilities and departments, enabling seamless communication and data exchange for critical healthcare workflows.
 
 ## Overview
 
-CareBridge provides a RESTful API that acts as an integration layer for healthcare systems:
-- **Health Facilities**: Register and manage hospitals, clinics, labs, and pharmacies in the network
-- **Patients**: Unified patient identification and tracking across multiple systems
+Referral Service provides a RESTful API for managing healthcare referrals:
 - **Referrals**: Coordinate patient referrals between facilities and departments
-- **Interoperability**: Enable communication between EMR systems, labs, pharmacy systems, and other healthcare applications
-- **Data Exchange**: Facilitate sharing of drug dosage orders, lab results, and clinical information
+- **Patients**: Unified patient identification and tracking for referral workflows
+- **Health Facilities**: Manage hospitals, clinics, and healthcare facilities in the referral network
+- **Interoperability**: Enable communication between healthcare systems for referral coordination
+
+> **Note**: This service currently includes patient and facility management components. In future iterations, authentication and facility management will be extracted into separate microservices.
 
 ## Technology Stack
 
@@ -31,14 +32,14 @@ Before running CareBridge, ensure you have the following installed:
 
 ## Database Setup
 
-1. Create a PostgreSQL database (the default database name is `carbridge`):
+1. Create a PostgreSQL database (the default database name is `referral_service`):
 ```bash
-createdb carbridge
+createdb referral_service
 ```
 
 2. Configure database credentials using environment variables:
 ```bash
-export DB_URL=jdbc:postgresql://localhost:5432/carbridge
+export DB_URL=jdbc:postgresql://localhost:5432/referral_service
 export DB_USERNAME=your_username
 export DB_PASSWORD=your_password
 ```
@@ -53,6 +54,8 @@ git clone https://github.com/openbunch/CareBridge.git
 cd CareBridge
 ```
 
+> **Note**: The repository is named CareBridge for historical reasons. This service is now focused on referral management.
+
 2. Build the project:
 ```bash
 ./mvnw clean install
@@ -60,7 +63,7 @@ cd CareBridge
 
 3. Run the application with environment variables:
 ```bash
-DB_URL=jdbc:postgresql://localhost:5432/carbridge \
+DB_URL=jdbc:postgresql://localhost:5432/referral_service \
 DB_USERNAME=your_username \
 DB_PASSWORD=your_password \
 ./mvnw spring-boot:run
@@ -77,7 +80,7 @@ Once the application is running, you can access the interactive API documentatio
 
 ## API Authentication
 
-CareBridge uses API key authentication via the `X-API-Key` header. To use the API:
+Referral Service uses API key authentication via the `X-API-Key` header. To use the API:
 
 1. Create a health facility to receive an API key:
 ```bash
