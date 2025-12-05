@@ -22,7 +22,7 @@ public class HealthFacilityController {
     @Operation(
             summary = "Create a new health facility and API key",
             description = """
-                    Creates a health facility in the CareBridge network and generates 
+                    Creates a health facility in the Referral Service network and generates 
                     an API key that the facility will use in the X-API-Key header.
                     """
     )

@@ -4,6 +4,7 @@ package com.okumujustine.referralservice.referral.dtos;
 import com.okumujustine.referralservice.referral.enums.ReferralPriority;
 import com.okumujustine.referralservice.referral.enums.ReferralType;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
@@ -15,7 +16,7 @@ public class ReferralCreateRequest {
     @NotBlank
     private String toFacilityId;
 
-    @NotBlank
+    @NotNull
     private ReferralType referralType;
 
     @NotBlank

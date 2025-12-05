@@ -24,7 +24,7 @@ Referral Service provides a RESTful API for managing healthcare referrals:
 
 ## Prerequisites
 
-Before running CareBridge, ensure you have the following installed:
+Before running Referral Service, ensure you have the following installed:
 
 - Java 21 or higher
 - PostgreSQL database
